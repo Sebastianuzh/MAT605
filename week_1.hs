@@ -1,2 +1,4 @@
 hello = putStrLn "Hello"
-helo = putStrLn "Hello"
+
+doubleMe :: Int -> Int
+doubleMe x = x * 2
