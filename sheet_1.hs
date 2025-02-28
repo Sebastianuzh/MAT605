@@ -1,3 +1,5 @@
+{-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
+{-# HLINT ignore "Eta reduce" #-}
 import Data.Char (toLower)
 --Exercise_2
 
@@ -14,3 +16,12 @@ toLowerCase = map toLower
 map_1 :: (a->b) -> [a] -> [b]
 map_1 _ [] = []
 map_1 f(x:xs) = f x : map_1 f xs 
+
+--Exercise 4 
+
+f :: Eq a => (a-> Bool) -> [a] ->[Int]
+f p liste = map (\x -> if p x then 1 else 0 ) liste
+
+
+f_2 :: Eq a => (a -> Bool) -> [a] -> [a]
+f_2 p liste = filter p liste
