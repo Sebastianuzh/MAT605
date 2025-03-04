@@ -4,7 +4,10 @@ import Data.Char (toLower)
 --Exercise_2
 
 fl :: [Double] -> [Int]
-fl = map floor
+fl xs = map floor xs
+--
+f1_2 :: [Double] -> [Int]
+f1_2 xs = [floor x | x <- xs]
 
 d11 :: Int -> Bool
 d11 n = n `mod` 11 == 0
@@ -25,3 +28,28 @@ f p liste = map (\x -> if p x then 1 else 0 ) liste
 
 f_2 :: Eq a => (a -> Bool) -> [a] -> [a]
 f_2 p liste = filter p liste
+
+
+filter' :: (Eq a) => (a -> Bool) -> [a] -> [a]
+filter' p xs = [x | x <- xs, p x]
+
+
+-- Exercise 5
+swap :: (a, b) -> (b, a)
+swap p = (snd p, fst p) 
+
+swap_1 :: (a,b) ->(b,a)
+swap_1 = (x,y) = (y,x)
+
+apply :: a -> (a -> b) -> b
+apply a f = f a
+
+compose :: (a -> b) -> (b -> c) -> a -> c
+compose f g x = g (f x) --one also can write dollar signs 
+
+-- Exercise 6
+-- f: elem, notElem, allEqual
+-- g: map, map then reverse
+-- h: sort, sort then reverse
+
+
