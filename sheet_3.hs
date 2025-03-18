@@ -1,7 +1,7 @@
 --Exercise_1
 {-# LANGUAGE BlockArguments #-}
 
-data CoolBool = Nope | Yup deriving(Show,Eq,Ord)
+data CoolBool = Nope | Yup deriving(Show,Eq,Ord) --Eq kann vergleichen, ord gibt eine ordung
 
 
 --Exercise_2
@@ -42,6 +42,13 @@ coolAnd (x:xs) = if x == Nope then Nope else coolAnd xs
 coolOr::[CoolBool]->CoolBool
 coolOr [] = Nope
 coolOr (x:xs) = if x== Yup then Yup else coolOr xs
+
+--Alternative 
+
+coolOr_1::[CoolBool]->CoolBool
+coolOr_1 [] = Nope
+coolOr_1 (Yup:xs) =Yup
+coolOr_1 (Nope :xs) = coolOr_1 xs
 
 
 --Exercise_5
