@@ -12,4 +12,5 @@ toSet xs = Set (nub xs)
 
 --Check wether is an element of a Set 
 inSet :: a -> Set a -> Bool 
-inSet x s = x 
+inSet x s = x
+--bla
