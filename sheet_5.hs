@@ -1,6 +1,6 @@
 import Data.List (nub)
 
-data Set a = Set [a] deriving (Show)
+data Set a = Set [a] deriving(Show)
 
 instance (Eq a) => Eq (Set a) where
   (==) :: Set a -> Set a -> Bool

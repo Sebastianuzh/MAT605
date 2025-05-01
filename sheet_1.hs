@@ -39,13 +39,15 @@ swap :: (a, b) -> (b, a)
 swap p = (snd p, fst p) 
 
 swap_1 :: (a,b) ->(b,a)
-swap_1 = (x,y) = (y,x)
+swap_1  (x,y) = (y,x)
 
 apply :: a -> (a -> b) -> b
 apply a f = f a
 
 compose :: (a -> b) -> (b -> c) -> a -> c
 compose f g x = g (f x) --one also can write dollar signs 
+--Beispiel compose (+2) (*5) 3
+
 
 -- Exercise 6
 -- f: elem, notElem, allEqual
