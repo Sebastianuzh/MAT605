@@ -45,6 +45,7 @@ type FunRel' a b = a -> b -> Bool
 -- Domain / range of a relation
 domRel :: (Eq a) => Rel a -> Set a
 domRel r = toSet [fst xs | xs <- unSet r]
+--Beispiel domRel (Set [(1,2), (3,4), (1,3)])
 
 domRel' :: (Eq a) => Rel a -> Set a
 domRel' r = toSet [x | (x, _) <- unSet r]
@@ -58,6 +59,7 @@ ranRel' r = toSet [y | (_, y) <- unSet r]
 -- Check if (x,y) is in relation
 inRel :: (Eq a) => (a, a) -> Rel a -> Bool
 inRel xs r = xs `inSet` r
+--Beispiel inRel(1,2)(Set [(1,2), (3,4), (1,3)])
 
 inRel' :: (Eq a) => (a, a) -> Rel a -> Bool
 inRel' = inSet
@@ -66,6 +68,7 @@ inRel' = inSet
 -- Reflexivity
 reflRel :: (Eq a) => Set a -> Rel a -> Bool
 reflRel a r = and [(x, x) `inRel` r | x <- unSet a]
+--Beispiel reflRel (Set [1,3,2]) (Set [(1,1), (2,2)])
 
 -- Symmetry
 symRel :: (Eq a) => Rel a -> Bool
